@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'tinktankcons';
+    src: url('_/_type/tinktankcons.woff') format('woff'),
+         url('_/_type/tinktankcons.ttf') format('truetype');
+}
+html {
+  font: normal 100%/1.6 sans-serif;
+}
+body {
+  -webkit-hyphens: auto;
+  -moz-hyphens:    auto;
+  -ms-hyphens:     auto;
+  hyphens:         auto;
+  word-wrap: break-word;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  color: $gray; 
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+h1,.h1 {
+  font-size: 1.5em;
+}
+h2,.h2 {
+  font-size: 1.3em;
+}
+h3,.h3 {
+  font-size: 1.1em;
+}
+h4,.h4 {
+  font-size: 0.9em;
+}
+p {
+  margin-bottom: 1em;
+}
+ul, ol, ul ul, ul ol, ol ol, ol ul {
+  padding-left: 1.2em;
+  margin-bottom: 1em;
+}
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+blockquote {
+  padding: 1em;
+  background: rgba(0,0,0,0.05);
+  border-left: 10px solid $transBlack;
+  font-family: Georgia, serif;
+  font-size: 0.95em;
+  font-style: italic;
+  font-weight: lighter;
+  margin-bottom: 2em;
+  
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  p {
+    margin-bottom: 0;
+  }
+  cite {
+    display: inline-block;
+    float: right;
+    margin:1em 0 0;
+    font-style: normal;
+  }
+}
+a {
+  @include transition;
+  text-decoration: underline;
+  color: $gray;
+
+  &:hover, &:focus {
+    color: $link;
+  }
+}
+.btn, .wpcf7-submit {
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  cursor: pointer;
+  
+  &:hover, &:focus {
+    background: rgba(0,0,0,0.8);
+  }
+}
+.fluid-width-video-wrapper {
+  background: $transBlack;
+}
+.wp-caption-text {
+  font-family: Georgia, serif;
+  font-size: 0.95em;
+  font-style: italic; 
+}
+[data-icon]::before {
+  position: relative;
+  content: attr(data-icon);
+  font-family: 'tinktankcons';
+  font-weight: 400 !important;
+  font-style: normal;
+  text-transform: none;
+  line-height: 0;
+}

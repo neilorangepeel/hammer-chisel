@@ -1,0 +1,228 @@
+/*!
+Theme Name: Hammer & Chisel
+Theme URI: http://tinktank.in/demo/hammer-chisel/
+Description: A responsive theme with full background images and customisable colour scheme.
+Author: Neil Hainsworth
+Author URI: http://neilorangepeel.com
+Version: 1
+*/
+
+$transBlack: rgba(0,0,0,0.1);
+$transWhite: rgba(255,255,255,0.1);
+$gray:       #333;
+$link:       red;
+
+
+@import 'bp';
+@import 'reset';
+@import 'toolbox';
+@import 'typography';
+
+
+//----------------- STRUCTURE
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height:100%;
+}
+body {
+  background: #333 no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size: 14px;
+  @include bp (S) {
+    background: none !important;
+  }
+}
+.wrapper {
+  max-width: 30em;
+  padding: 3em;
+  background: white;
+  @include bp (S) {
+    padding: 1em;
+  }
+}
+
+//----------------- HEADER + NAV
+.header {
+  margin-bottom: 4em;
+  @include bp (S) {
+    margin-bottom: 3em;
+  }
+}
+.logo {
+  height:auto;
+  margin-bottom:2em;
+  @include bp (S) {
+    margin: 0 auto 1em;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    font-size: 2.8em;
+    line-height: 1em;
+  }
+}
+.main-nav {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  .current-menu-item a {
+    color: $link;
+  }
+  @include bp (S) {
+    ul {
+      text-align: center;
+    }
+    li {
+      display: inline-block;
+    }
+    a {
+      display: block;
+      margin-bottom: 0.3em;
+      padding: 0.4em;
+      font-size: 0.9em;
+      background: rgba(0,0,0,0.05);
+      border-bottom: 1px solid $transBlack;
+      -webkit-border-radius: 0.3em;
+      border-radius:         0.3em;
+    }
+  }
+}
+
+//----------------- BLOG
+.post {
+  margin-bottom: 4em;
+  time {
+    font-style: italic;
+    font-size: 90%;
+  }
+  .post-title a {
+    text-decoration: none;
+  }
+}
+article {
+  img {
+    margin-bottom: 1em;
+  }
+}
+
+//----------------- ARCHIVES
+.archives-post {
+  position: relative;
+  border-top: 1px solid $transBlack;
+  margin-bottom: 0;
+  min-height: 100px;
+
+  &:last-of-type {
+    border-bottom: 1px solid $transBlack;
+    margin-bottom: 4em;
+  }
+  h2 {
+    position: absolute;
+    bottom: 0;
+    float: left;
+    width: 70%;
+    padding-right: 5%;
+    line-height: 1.2em;
+  }
+  .featIMG {
+    width: 30%;
+    margin: 0;
+    float: right;
+    opacity: 0.7;
+  }
+}
+
+//----------------- LANDING PAGE
+[class*='page-template-page-landing'] {
+  .footer {
+    display: none;
+  }
+}
+
+//----------------- FOOTER
+.footer {
+  margin-top: 2em;
+  padding: 2em 0 0;
+  border-top: 1px solid $transBlack;
+  text-align: center;
+  a {
+    display: block;
+    margin-bottom: 1em;
+    text-decoration: none;
+  }
+}
+
+//----------------- COMMENTS
+.commentlist {
+  padding: 0;
+
+  li {
+    padding: 1em 0;
+    list-style: none;
+    border-top: 1px solid $transBlack;
+    border-bottom: 1px solid $transBlack;
+  }
+  .avatar {
+    float: left;
+    width: 15%;
+    margin-right: 1em;
+  }
+  .comment-meta {
+    margin-bottom: 1em;
+  }
+}
+textarea, input {
+  background: transparent;
+  color: #333;
+  border: 1px solid rgba(0,0,0,0.6);
+  padding: 1em;
+  max-width:100%;
+  -webkit-border-radius: 0.5em;
+  border-radius:         0.5em;
+
+  &:focus {
+    border: 1px dotted rgba(0,0,0,0.6);
+    outline: none;
+  }
+}
+::-webkit-input-placeholder {
+   color: #333;
+}
+:-moz-placeholder {
+   color: #333;
+}
+::-moz-placeholder {
+   color: #333;
+}
+:-ms-input-placeholder {
+   color: #333;
+}
+
+//----------------- SOCIAL ICONS
+.social-icons {
+  width: 7em;
+  margin: 0.5em auto 0;
+  font-size: 2em;
+  a {
+    display: inline-block;
+    padding: 1px;
+    margin-bottom: 0;
+  }
+  span {
+    position: absolute;
+    top:-9999px;
+    left:-9999px;
+  }
+}
